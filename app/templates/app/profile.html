@@ -1,0 +1,15 @@
+{% block content %}
+
+{{ user.username }}
+
+{{ user.collage }}
+
+{{ user.level }}
+
+<div>
+    {% if user.image %}
+   <img src="{{ user.imageURL }}"  style="height: 300px;width:300px;">
+   {% endif %}
+</div>
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% block content %}
+
+{{ subject.name }}
+
+{{ subject.prof }}
+
+{{ subject.level }}
+
+
+
+<div>
+    {% if user.image %}
+   <img src="{{ subject.imageURL }}"  style="height: 300px;width:300px;">
+   {% endif %}
+</div>
+
+{% endblock content %}

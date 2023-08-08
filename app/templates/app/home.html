@@ -1,0 +1,43 @@
+
+
+{% block content %}
+    
+<div>
+    <form method="GET" action="{% url 'app:home' %}">
+        <input type="text" name="q" placeholder="Search">
+    </form>
+</div>
+
+    {% if not user.is_authenticated %}
+        <a href="{% url 'users:register' %}">Sign In</a>
+        <a href="{% url 'users:LogInPage' %}">Log In</a>
+       
+    {% else %}
+        <a href="{% url 'app:profile' user.id %}">{{ user.username }}</a> 
+        <a href="{% url 'users:LogOutPage' %}">Log Out</a>
+    {% endif %}
+
+ 
+
+    <div>
+        {% for subject in subjects %}
+            <a href="{% url 'app:subject' subject.id %}"> {{subject }}</a>
+        {% endfor %}
+    </div>
+    <div>
+        {% for student in students %}
+            {{ student }}
+        {% endfor %}
+    </div>
+    <div>
+        {% for proffisor in proffisors %}
+            {{ proffisor }}
+        {% endfor %}
+    </div>
+    <div>
+        {% for employee in employees %}
+            {{ employee }}
+        {% endfor %}
+    </div>
+    
+{% endblock content %}
